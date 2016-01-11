@@ -9,47 +9,58 @@ h1 {
   color: rgba(0, 0, 0, .3);
   font-weight: bold;
   font-size: 32px;
-  letter-spacing: -1px;
   text-transform: uppercase;
   text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
-  background: url("../images/middleman.png") no-repeat center 100px;
-  padding: 350px 0 10px;
-  margin: 0; }
+}
 
-.doc {
-  font-size: 14px;
-  margin: 0; }
-  .doc:before,
-  .doc:after {
-    opacity: .2;
-    padding: 6px;
-    font-style: normal;
-    position: relative;
-    content: "•"; }
-  .doc a {
-    color: rgba(0, 0, 0, 0.3); }
-    .doc a:hover {
-      color: #666; }
+section {
+  margin-top: 80px; 
+}
 
-.welcome {
-  -webkit-animation-name: welcome;
-  -webkit-animation-duration: .9s; }
+.animate {
+  height: 200px;
+  width: 200px;
+  margin: 0 auto;
+  background-color: coral;
 
-@-webkit-keyframes welcome {
-  from {
-    -webkit-transform: scale(0);
-    opacity: 0;
+  animation-name: square-to-circle;
+  animation-duration: 2s;
+  animation-delay: .5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+
+  /*This is a shortcut for the code above*/
+  /*animation: square-to-circle 2s 1s infinite alternate;*/
+}
+
+@-webkit-keyframes square-to-circle {
+  0% {
+    border-radius: 0 0 0 0;
+    background:coral;
+    transform:rotate(0deg);
   }
+
+  25% {
+    border-radius: 50% 0 0 0;
+    background:darksalmon;
+    transform:rotate(45deg);
+  }
+
   50% {
-   -webkit-transform: scale(0);
-   opacity: 0;
+    border-radius: 50% 50% 0 0;
+    background-color: indianred;
+    transform:rotate(90deg);
   }
-  82.5% {
-    -webkit-transform: scale(1.03);
-    -webkit-animation-timing-function: ease-out;
-    opacity: 1;
+
+  75% {
+    border-radius: 50% 50% 50% 0;
+    background:lightcoral;
+    transform:rotate(135deg);
   }
-  to {
-    -webkit-transform: scale(1);
+
+  100% {
+    border-radius: 50%;
+    background:darksalmon;
+    transform:rotate(180deg);
   }
 }
